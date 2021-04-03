@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" href="img/favicon.png">
+<title id="title"></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="theme-color" content="#3B5998" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
+<link rel="stylesheet" href="style.css">
+$(if refresh-timeout)
+<script>
+	setTimeout(function(){
+	location.href = './status';
+	},4000)
+</script>
+$(endif)
+</head>
+<body background="img/bg.jpg">
+<div class="main" style="background-color:transparent;">
+            <div class="box">
+                <img class="logo" src="img/logo.png" width="225px" height="50px">
+	<hr>
+		<h3>Wilujeng sumping</h3> <br>
+			<b>Aksess internet di pasihan <br>
+				Pake kana ka alusannya, tong hareu-reuy. </b> 
+                    <div style="margin-top: 10px" class="row">
+						<center>
+							<img style="width:20%" alt="facebook" src="img/facebook-sites.png">
+							<img style="width:22%" alt="google" src="img/google-sites.png">
+							<img style="width:20%" alt="youtube" src="img/youtube-sites.png">
+						</center>
+					</div><br>
+				<img src="img/game.png" width="300px" height="50px">
+<button class="button" onclick="window.location='./status'"><i class="icon icon-check">&#xe807;</i> Tenjo status voucher</buton>
+</div>
+<script type="text/javascript">
+	document.getElementById('title').innerHTML = window.location.hostname + " Success";	
+    document.getElementById('dname').innerHTML = window.location.hostname;	
+</script>
+</body>
+</html>

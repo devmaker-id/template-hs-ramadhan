@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" href="img/favicon.png">
+	<title id="title"></title>
+$(if refresh-timeout)
+	<meta http-equiv="refresh" content="$(refresh-timeout-secs)">
+$(endif)
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<meta name="theme-color" content="#3B5998" />
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/blink.css">
+<script language="JavaScript">
+
+$(if advert-pending == 'yes')
+    var popup = '';
+    function focusAdvert() {
+	if (window.focus) popup.focus();
+    }
+    function openAdvert() {
+	popup = open('$(link-advert)', 'hotspot_advert', '');
+	setTimeout("focusAdvert()", 1000);
+    }
+$(endif)
+    function openLogout() {
+	if (window.name != 'hotspot_status') return true;
+        open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
+	window.close();
+	return false;
+    }
+
+</script>
+</head>
+<body $(if advert-pending == 'yes')	onLoad="openAdvert()" $(endif) background="img/bg.jpg">
+	<div class="main"  style="background-color:transparent;">
+       <div class="box">
+         <img class="logo" src="img/logo.png" width="100%" height="80px">
+		<hr>
+            </div>
+<form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+
+$(if login-by == 'trial')
+	<div style="margin-top:20px; text-align: center;">
+		<span class="blink">
+			<font color=" #00FF00">
+				<b style="font-size:13px;font-family: Sans-serif">
+					Nga-BUBURIT bareng <br>
+					BUNGA CENTER 24, masih tiasa.
+				</b>
+			</font>
+		</span>
+	</div><br>
+$(elif login-by != 'mac')
+	<div style="margin-top:20px; text-align: center;">
+		<span class="blink">
+			<font color=" #00FF00">
+				<b style="font-size:13px;font-family: Sans-serif">
+					Tenang <br>
+					Paket wifi masih aya keneh.
+				</b>
+			</font>
+		</span>
+	</div><br>
+$(endif)
+<table class="table2">
+    <tr><td align="right">ID Alat <i class="icon icon-barcode">&#xe80a;</i> </td><td>$(mac)</td></tr>
+    <tr><td align="right">Ngirim <i class="icon icon-upload">&#xe808;</i> </td><td>$(bytes-in-nice)</td></tr>
+    <tr><td align="right">Narima <i class="icon icon-download">&#xe809;</i> </td><td>$(bytes-out-nice)</td></tr>
+	<tr><td align="right">Nyambung <i class="icon icon-exchange">&#xf0ec;</i> </td><td>$(uptime)</td></tr>
+$(if session-time-left)
+    <tr><td align="right">waktos sesana <i class="icon icon-clock">&#xe805;</i> </td><td>$(session-time-left)</td></tr>
+$(endif)
+$(if blocked == 'yes')
+	<tr><td align="right">statusna <i class="icon icon-check">&#xe807;</i> </td><td><div style="color: #FF8080">
+<a href="$(link-advert)" target="hotspot_advert">advertisement</a> required</div></td></tr>
+$(elif refresh-timeout)
+	<tr><td align="right">ulang <i class="icon icon-arrows-cw">&#xe800;</i> </td><td>$(refresh-timeout)</td></tr>
+$(endif)
+
+</table>
+$(if login-by-mac != 'yes')
+<br>
+$(endif)
+<center>
+<img src="img/norton.svg" width="100px">
+</center>
+<script type="text/javascript">
+    document.getElementById('title').innerHTML = window.location.hostname + " Status";
+//get vaidity
+    var usr = document.getElementById('user').innerHTML
+    var url = "/status/status.php?name=";
+    var url = "http://172.17.2.100/status/?session=SessionName=";
+    var SessionName = "QRZ-Server"
+    var getvalid = url+usr+"&session="+SessionName
+    document.getElementById('exp').src = getvalid;
+        
+</script>
+</body>
+</html>

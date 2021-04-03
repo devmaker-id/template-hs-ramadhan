@@ -1,0 +1,74 @@
+﻿.blink {
+        -webkit-animation: blink .75s linear infinite;
+        -moz-animation: blink .75s linear infinite;
+        -ms-animation: blink .75s linear infinite;
+        -o-animation: blink .75s linear infinite;
+        animation: blink .75s linear infinite;
+        color: #F00;
+        font-weight: bold;
+    }
+    
+    @-webkit-keyframes blink {
+        0% { opacity: 1; }
+        50% { opacity: 1; }
+        50.01% { opacity: 0; }
+        100% { opacity: 0; }
+    }
+    
+    @-moz-keyframes blink {
+        0% { opacity: 1; }
+        50% { opacity: 1; }
+        50.01% { opacity: 0; }
+        100% { opacity: 0; }
+    }
+    
+    @-ms-keyframes blink {
+        0% { opacity: 1; }
+        50% { opacity: 1; }
+        50.01% { opacity: 0; }
+        100% { opacity: 0; }
+    }
+    
+    @-o-keyframes blink {
+        0% { opacity: 1; }
+        50% { opacity: 1; }
+        50.01% { opacity: 0; }
+        100% { opacity: 0; }
+    }
+    
+    @keyframes blink {
+        0% { opacity: 1; }
+        50% { opacity: 1; }
+        50.01% { opacity: 0; }
+        100% { opacity: 0; }
+    }
+    /*widget random-post*/
+#rp_plus_img{overflow:hidden;border:solid 1px #ddd;padding:10px; background-color:none;line-height:1.7em;}
+#rp_plus_img ul{list-style-type:none;margin:0;padding:0;}
+#rp_plus_img li{border:0; margin:0; padding:0; list-style:none;}
+#rp_plus_img li{height:70px;padding:1px;list-style:none;}
+#rp_plus_img a{color:#3366ff;}
+#rp_plus_img .news-title{display:block;font-weight:normal !important;margin-bottom:5px;font-size:14px;text-align:left;}
+#rp_plus_img .news-text{display:block;font-size:12px;font-weight:normal !important;color:#282828;text-align:left;}
+#rp_plus_img img{float:left;margin-right:10px;padding:1px;border:solid 1px #cccccc;width:60px;height:60px;border-radius:4px;}
+    /*widget feeds.burner*/
+.t3a-emailsubmit {
+    background: transparent linear-gradient(to bottom, #A9A1FF 0%, #A9A1FF 100%) repeat scroll 0% 0%;
+    border: 0px solid #F8B650;
+    color: #FFF;
+    cursor: pointer;
+    line-height: 33px;
+    margin-left: -5px;
+    width: 25%;
+}
+
+.textarea {
+    background: #FAFAFA none repeat scroll 0% 0%;
+    border: 1px dotted #8E8E8E;
+    color: #A7A7A7;
+    font-size: 13px;
+    line-height: 31px;
+    width: 70%;
+    margin: 5px 0px;
+    padding: 0px 5px;
+}

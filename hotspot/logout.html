@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" href="img/favicon.png">
+<title id="title"></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="theme-color" content="#3B5998" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
+<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/blink.css">
+</head>
+
+<body background="img/bg.jpg">
+<script language="JavaScript">
+
+    function openLogin() {
+	if (window.name != 'hotspot_logout') return true;
+	open('$(link-login)', '_blank', '');
+	window.close();
+	return false;
+    }
+
+</script>
+
+<div class="main"  style="background-color:transparent;">
+  <div class="box">
+    <img class="logo" src="img/logo.png" width="100%" height="80px">
+	<hr>
+	</div>
+<div class="box">
+	<div style="margin-top:20px; text-align: center;">
+		<span class="blink">
+			<font color=" #00FF00">
+				<b style="font-size:13px;font-family: Sans-serif">
+					$(username)<br>
+					Anjeun parantos ngantunkeun hotspot!
+				</b>
+			</font>
+		</span>
+	</div>
+</div>
+<table class="table2">
+    <tr><td align="right">ID Alat <i class="icon icon-barcode">&#xe80a;</i>  </td><td>$(mac)</td></tr>
+    <tr><td align="right">Nyambung <i class="icon icon-exchange">&#xf0ec;</i> </td><td>$(uptime)</td></tr>
+    <tr><td align="right">Ngirim <i class="icon icon-upload">&#xe808;</i> </td><td>$(bytes-in-nice)</td></tr>
+    <tr><td align="right">Narima <i class="icon icon-download">&#xe809;</i> </td><td>$(bytes-out-nice)</td></tr>
+$(if session-time-left)
+    <tr><td align="right">waktos sesana <i class="icon icon-clock">&#xe805;</i> </td><td>$(session-time-left)</td></tr>
+$(endif)
+</table>
+<br>
+<form action="$(link-login)" name="login" onSubmit="return openLogin()">
+        <button class="button" type="submit"><i class="icon icon-login">&#xe803;</i> asupkeun deui</button>
+</form>
+</div>
+<script type="text/javascript">
+	document.getElementById('title').innerHTML = window.location.hostname + " Logout";
+</script>
+<center>
+<img src="img/norton.svg" width="100px">
+</center>
+</body>
+</html>
